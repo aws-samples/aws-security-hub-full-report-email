@@ -8,8 +8,8 @@ This solution assumes that Security Hub is enabled in your AWS account. If it is
 
 ## How the solution works
 1.	An EventBridge time-based event invokes a Lambda function for processing.
-2.	The Lambda function gets finding results from Security Hub API and writes them into a CSV files
-3. It uploads them as CSV into Amazon S3 and generates a pre authenticated link.
+2.	The Lambda function gets finding results from Security Hub API and writes them into a CSV file.
+3.  It uploads them as CSV into Amazon S3 and generates a pre authenticated link.
 4.	SNS sends the email notification to the address provided during deployment.
 5.	The email includes a link to download the file.
 
