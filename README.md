@@ -12,7 +12,7 @@ Security Hub includes various security standards and integrations that you can e
 5.	The email includes a link to download the file.
 
 ## Fields are included in the report
-1.	id
+1.	Finding id
 2.	ProductArn 
 3.	ProductName
 4.	CompanyName 
@@ -21,21 +21,21 @@ Security Hub includes various security standards and integrations that you can e
 7.	CreatedAt
 8.	UpdatedAt
 9.	Confidence
-10. RemText 
-11. RemUrl  
+10. RemediationText
+11. RemediationUrl
 12. SourceUrl
-13. Compliance
+13. Compliance Status
 14. WorkflowState 
 15. WorkflowStatus
 16. RecordState 
 17. Processed_at
 18. Finding title
 19. Finding description 
-20. severity
-21. region
-22. account_id
-23. resource_type
-24. resource_id
+20. Severity
+21. Region
+22. AccountId
+23. ResourceType
+24. ResourceId
 
 **Note:** That report can be extended with additional field as needed, by modifying the Lambda function.
 
