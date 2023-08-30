@@ -1,4 +1,4 @@
-## How to Setup a Recurring Security Hub Full Report Email
+## How to Setup a Recurring AWS Security Hub Full Report Email
 This solution uses AWS Security Hub API, AWS Lambda, Amazon S3, and Amazon SNS. List of findings are aggregated into csv file. Findings identify common security issues that may require remediation action. 
 
 ### Overview
