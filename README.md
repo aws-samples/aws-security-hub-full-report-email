@@ -4,6 +4,8 @@ This solution uses AWS Security Hub API, AWS Lambda, Amazon S3, and Amazon SNS. 
 ### Overview
 Security Hub includes various security standards and integrations that you can enable to understand your overall security state. A recurring Security Hub Full Report email will provide recipients with a proactive communication summarizing the security posture and improvement within AWS Accounts.
 
+This solution assumes that Security Hub is enabled in your AWS account. If it isn’t enabled, set up the service so that you can start seeing a comprehensive view of security findings across your AWS accounts.
+
 ## How the solution works
 1.	An EventBridge time-based event invokes a Lambda function for processing.
 2.	The Lambda function gets finding results from Security Hub API and writes them into a CSV files
