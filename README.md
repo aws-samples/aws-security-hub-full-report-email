@@ -1,8 +1,8 @@
-## How to Setup a Recurring AWS Security Hub Full Report Email
+## How to Setup a Recurring AWS Security Hub CSV Full Report with email notification
 This solution uses AWS Security Hub API, AWS Lambda, Amazon S3, and Amazon SNS. List of findings are aggregated into csv file, to help identify common security issues that may require remediation action. 
 
 ### Overview
-Security Hub includes various security standards and integrations that you can enable to understand your overall security state. A recurring Security Hub Full Report email will provide recipients with a proactive communication summarizing the security posture and improvement within AWS Accounts.
+Security Hub includes various security standards and integrations that you can enable to understand your overall security state. A recurring Security Hub CSV full report with email notification that provides recipients with a proactive communication summarizing the security posture and improvement within AWS Accounts.
 
 This solution assumes that Security Hub is enabled in your AWS account. If it isn’t enabled, set up the service so that you can start seeing a comprehensive view of security findings across your AWS accounts.
 
