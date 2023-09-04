@@ -287,7 +287,7 @@
                     " ",
                     "def create_s3_preauth_url(region, bucket_name, file_name):",
                     "    s3 = boto3.client('s3', region_name=region)",
-                    "    presigned_url = s3.generate_presigned_url('get_object', Params={'Bucket': bucket_name, 'Key': file_name}, ExpiresIn=3600)",
+                    "    presigned_url = s3.generate_presigned_url('get_object', Params={'Bucket': bucket_name, 'Key': file_name}, ExpiresIn=86400)",
                     "    print(presigned_url)",
                     "    return presigned_url",
                     " ",    
