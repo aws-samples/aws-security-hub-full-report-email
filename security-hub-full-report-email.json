@@ -144,6 +144,7 @@
       "LambdaExecutionRole": {
             "Type": "AWS::IAM::Role",
             "Properties": {
+              "MaxSessionDuration" : "43200",
               "AssumeRolePolicyDocument": {
                 "Version": "2012-10-17",
                 "Statement": [{
