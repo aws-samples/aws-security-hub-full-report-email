@@ -29,7 +29,7 @@
             "rules_to_suppress":[
             {
               "id": "W35",
-              "reason": "Can't resolve without creating a depdency with other S3 Bucket"
+              "reason": "Can't resolve without creating a depedency with other S3 Bucket"
             }
             ]
           }
@@ -84,6 +84,42 @@
               "Condition": {
                 "StringNotEquals": {
                   "s3:x-amz-server-side-encryption": "AES256"
+                }
+              }
+            },
+            {
+              "Sid": "DenyInsecureRequests",
+              "Effect": "Deny",
+              "Principal": "*",
+              "Action": "s3:*",
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "S3BucketName"
+                      }                      
+                    ]
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:aws:s3:::",
+                      {
+                        "Ref": "S3BucketName"
+                      },
+                      "/*,"                    
+                    ]
+                  ]
+                }
+              ],
+              "Condition": {
+                "Bool": {
+                  "aws:SecureTransport": "false"
                 }
               }
             }
@@ -167,7 +203,7 @@
                     {
                       "Effect": "Allow",
                       "Action": ["securityhub:Get*","securityhub:List*"],
-                      "Resource": "arn:*:securityhub:*:*:hub/default"
+                      "Resource": { "Fn::Sub" : "arn:*:securityhub:*:${AWS::AccountId}:hub/default" }
                     },
                     {
                       "Effect": "Allow",
@@ -281,6 +317,7 @@
                     "    s3 = boto3.client('s3', region_name=region)",
                     "    tc = boto3.s3.transfer.S3Transfer(client=s3)",
                     "    tc.upload_file(fullpath, bucket_name, filename,extra_args={'ServerSideEncryption':'AES256'})",
+                    "    os.remove(fullpath)",
                     " ",    
                     "def collection_to_csv(col, filename):",
                     "    with open(filename, 'w') as f:",
@@ -304,7 +341,6 @@
                     "    copy_file_to_s3 (region,bucket,filename)",
                     "    url=create_s3_preauth_url(region, bucket, filename)",
                     "    send_sns(url)",
-                    "    #print(url)",
                     "    return {",
                     "        'statusCode': 200,",
                     "        'body': json.dumps('Report: ' + url)",
