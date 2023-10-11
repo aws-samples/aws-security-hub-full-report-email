@@ -42,15 +42,15 @@ This solution assumes that Security Hub is enabled in your AWS account. If it is
 **Note:** That report can be extended with additional field as needed, by modifying the Lambda function.
 
 ## Deployment Steps
-1.	Download the CloudFormation template **security-hub-email-summary-cf-template.json** 
-2. Copy security-hub-full-report-email.json **to an S3 bucket within your target AWS account** and region. Copy the object URL for the CloudFormation template.
-3. On AWS account console, open the service **CloudFormation**. Click on **Create Stack** with new resources.
-4.	Enter the S3 Object URL for the security-hub-full-report-email.json which you uploaded in step 1 in the text box for Amazon S3 URL under Specify template.
-5.	Click on **Next**. On next page, enter a name for the stack.
-6.	On the same page, enter values for the input **parameters**.
-7.	Click **Next**.
-8.	Accept all defaults in screens that follow and create the stack. Click **Next**.
-9.	**Check** I acknowledge that AWS CloudFormation might create IAM resources. Click **Create Stack**.
+1. Download the CloudFormation template **security-hub-email-summary-cf-template.json** 
+2. On AWS account console, open the service **CloudFormation**.
+3. Click on **Create Stack** with new resources. Select **Template is ready** and then **Upload a template file**.
+4. Using **Choose file**, select the security-hub-full-report-email.json file which you downloaded in step 1.
+5. Click on **Next**. On next page, enter a name for the stack.
+6. On the same page, enter values for the input **parameters**.
+7. Click **Next**.
+8. Accept all defaults in screens that follow and create the stack. Click **Next**.
+9. **Check** I acknowledge that AWS CloudFormation might create IAM resources. Click **Create Stack**.
 
 ## Test Solution
 You can send a test email once the deployment is complete and you have confirmed the SNS subscription email.  Navigate to the Lambda console and locate the function Lambda function named SendSecurityHubFullReportEmail. Perform a [manual invocation](https://docs.aws.amazon.com/lambda/latest/dg/getting-started-create-function.html#get-started-invoke-manually) with any event payload to receive an email shortly. 
