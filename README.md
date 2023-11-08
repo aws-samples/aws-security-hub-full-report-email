@@ -27,17 +27,16 @@ This solution assumes that Security Hub is enabled in your AWS account. If it is
 11. RemediationUrl
 12. SourceUrl
 13. Compliance Status
-14. WorkflowState 
-15. WorkflowStatus
-16. RecordState 
-17. Processed_at
-18. Finding title
-19. Finding description 
-20. Severity
-21. Region
-22. AccountId
-23. ResourceType
-24. ResourceId
+14. WorkflowStatus
+15. RecordState 
+16. Processed_at
+17. Finding title
+18. Finding description 
+19. Severity
+20. Region
+21. AccountId
+22. ResourceType
+23. ResourceId
 
 **Note:** That report can be extended with additional field as needed, by modifying the Lambda function.
 
