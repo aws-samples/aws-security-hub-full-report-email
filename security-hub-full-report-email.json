@@ -278,7 +278,7 @@
                     "    lines = 0",
                     "    #print('get_securityhub_findings2csv STARTED')",
                     "    #Adds Findings Title",
-                    "    findings_csv = f'Id{csv}ProductArn{csv}ProductName{csv}CompanyName{csv}GeneratorId{csv}SecurityControlId{csv}CreatedAt{csv}UpdatedAt{csv}Confidence{csv}Remediation{csv}Remediation_URL{csv}SourceUrl{csv}Compliance{csv}WorkflowStatus{csv}RecordState{csv}ProcessedAt{csv}Title{csv}severity{csv}Region{csv}Account_id{csv}Description{csv}Resource_type{csv}Resource_id' + os.linesep",
+                    "    findings_csv = f'Id{csv}ProductArn{csv}ProductName{csv}CompanyName{csv}GeneratorId{csv}SecurityControlId{csv}CreatedAt{csv}UpdatedAt{csv}Confidence{csv}Remediation{csv}Remediation_URL{csv}SourceUrl{csv}Compliance{csv}WorkflowStatus{csv}RecordState{csv}ProcessedAt{csv}Title{csv}severity{csv}Region{csv}Account_id{csv}Description{csv}Resource_type{csv}Resource_id{csv}Resource_tags' + os.linesep",
                     "    #Adds Findings Details",
                     "    for page in findings_pages:",
                     "        for finding in page['Findings']:",
