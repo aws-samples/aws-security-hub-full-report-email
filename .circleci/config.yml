@@ -1,0 +1,35 @@
+---
+version: 2.1
+
+orbs:
+  cfn: frameio/cloudformation@0.29.7
+  deploy: achievementnetwork/deploy@2.7.0
+
+executors:
+  cfn-lint-executor:
+    docker:
+      - image: alpine:3.18
+
+workflows:
+  check-deploy:
+    jobs:
+      - cfn/lint:
+          template: '*.json'
+          executor: cfn-lint-executor
+          filters:
+            branches:
+              only: /.*/
+            tags:
+              only: /.*/
+      - deploy/deploy-cfn:
+          name: deploy-security-report-email
+          parameter-overrides: EmailAddress=glewis@achievementnetwork.org
+          template: security-hub-full-report-email.json
+          context: anetroot
+          requires:
+            - cfn/lint
+          filters:
+            branches:
+              only:
+                - main
+                - /.*-dev/
