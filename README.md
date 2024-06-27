@@ -37,7 +37,8 @@ This solution assumes that Security Hub is enabled in your AWS account. If it is
 21. AccountId
 22. ResourceType
 23. ResourceId
-24. ResourceTags
+24. ResourceName
+25. ResourceTags
 
 **Note:** That report can be extended with additional field as needed, by modifying the Lambda function.
 
